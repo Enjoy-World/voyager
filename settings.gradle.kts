@@ -1,6 +1,6 @@
 import com.dropbox.focus.FocusExtension
 
-rootProject.name = "voyager"
+rootProject.name = "your-new-project-name"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
