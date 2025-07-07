@@ -1,6 +1,6 @@
 import com.dropbox.focus.FocusExtension
 
-rootProject.name = "your-new-project-name"
+rootProject.name = "voyager"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
@@ -23,8 +23,16 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
-//    repositoriesMode = RepositoriesMode.FAIL_ON_PROJECT_REPOS
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/Enjoy-World/voyager")
+            credentials {
+                username = providers.gradleProperty("gpr.user").getOrElse("")
+                password = providers.gradleProperty("gpr.key").getOrElse("")
+            }
+        }
         google()
         mavenCentral()
         maven(url = "https://maven.pkg.jetbrains.space/public/p/compose/dev")
